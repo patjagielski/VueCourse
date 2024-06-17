@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@3.4.9/dist/vue.global.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Your Name</h1>
+    </header>
+    <section id="user-goal">
+      <p>{{ myAge }}</p>
+      <!-- <p v-html="outputGoal()"></p> -->
+      <p>{{ageInFiveYears()}}</p>
+      <p>{{favoriteNumber()}}</p>
+      <!-- <img v-bind:src="image" /> -->
+      <!-- <p>Learn more <a v-bind:href="vueLink">about vue</a></p> -->
+      <input type="text" :value="myName"/>
+      
+    </section>
+    <section id="event-listeners">
+      <h1>Vue Events</h1>
+      <button @click="increment(10)"> Add </button>
+      <button @click="decrease(1)"> Reduce </button>
+      <p v-once>Starting Counter: {{ counter }}</p>
+      <p> Result: {{counter}}</p>
+      <input 
+        type="text" 
+        v-model="name">
+      <input 
+        type="text" 
+        v-model="lastName">
+      <button @click="resetInput"> Reset Input </button>
+      <p> Your Name: {{ fullName }}</p>
+      <!-- <form v-on:submit.prevent="submitForm">
+        <input type="text">
+        <button> Sign up </button>
+      </form> -->
+    </section>
+  </body>
+</html>
